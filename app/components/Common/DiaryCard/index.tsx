@@ -3,12 +3,13 @@ import { DiaryItem } from '@/interfaces'
 import './styles.scss'
 export type Props = {
   data: DiaryItem
+  className?: string | ''
 }
-export default function DiaryCard({ data }: Props) {
+export default function DiaryCard({ data, className }: Props) {
   return (
     <div
-      className="diary-card-container transition duration-700 ease-in-out 
-      border-4 text-dark-500 border-gray-400 hover:border-primary-300"
+      className={`diary-card-container transition duration-700 ease-in-out 
+      border-4 text-dark-500 border-gray-400 hover:border-primary-300 ${className}`}
     >
       <a href="#">
         <div className="diary-card-container  p-4" key={data.id}>

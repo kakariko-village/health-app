@@ -3,10 +3,11 @@ import { ColumnItem } from '@/interfaces'
 import './styles.scss'
 export type Props = {
   data: ColumnItem
+  className?: string | ''
 }
-export default function ColumnCard({ data }: Props) {
+export default function ColumnCard({ data, className }: Props) {
   return (
-    <div className="column-card-container text-dark-500">
+    <div className={`column-card-container text-dark-500 ${className}`}>
       <a href="#">
         <div className="column-card-img relative mb-[10px]">
           <img className="" src={data.img} alt="" />

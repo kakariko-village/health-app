@@ -1,0 +1,16 @@
+.back-to-top {
+    .normal-ico {
+        display: block;
+    }
+    .hover-ico {
+        display: none;
+    }
+    &:hover {
+        .normal-ico {
+            display: none;
+        }
+        .hover-ico {
+            display: block;
+        }
+    }
+}

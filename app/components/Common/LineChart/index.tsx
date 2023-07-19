@@ -43,7 +43,7 @@ export const options = {
   },
 }
 
-export default function DataChart({ labels, datasets }: Props) {
+export default function LineChart({ labels, datasets }: Props) {
   const [data, setData] = useState({
     labels,
     datasets,

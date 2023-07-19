@@ -64,21 +64,27 @@ export default function RecordChart() {
           img="./images/MyRecommend-1.jpg"
           btnText="自分のカラダの記録"
           callback={() => scrollToContent('#body-record')}
+          className="slideInDown animated-2"
         />
         <RecordBtn
           title="MY EXERCISE"
           img="./images/MyRecommend-2.jpg"
           btnText="自分の運動の記録"
           callback={() => scrollToContent('#my-exercise')}
+          className="slideInUp animated-2"
         />
         <RecordBtn
           title="MY DIARY"
           img="./images/MyRecommend-3.jpg"
           btnText="自分の日記"
           callback={() => scrollToContent('#my-diary')}
+          className="slideInDown animated-2"
         />
       </div>
-      <div id="body-record" className="chart-container bg-dark-500 mb-[50px]">
+      <div
+        id="body-record"
+        className="chart-container bg-dark-500 mb-[50px] fadeIn animated-2"
+      >
         <div className="chart-title flex w-[242px] text-white px-4 pt-6">
           <h2 className="text-[15px] font-normal pr-4 uppercase">
             BODY RECORD
@@ -91,7 +97,7 @@ export default function RecordChart() {
       </div>
       <div
         id="my-exercise"
-        className="my-exercise-container bg-dark-500 mb-[50px]"
+        className="my-exercise-container bg-dark-500 mb-[50px] fadeIn animated-2"
       >
         <div className="chart-title flex w-[242px] text-white px-4 py-6">
           <h2 className="text-[15px] font-normal pr-4 uppercase">

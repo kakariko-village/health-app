@@ -53,7 +53,11 @@ export default function MyDiary({ data, apiUrl }: Props) {
       <div className="grid grid-cols-4 gap-4 mb-[32px]">
         {diaryData && diaryData.length > 0
           ? diaryData.map((item: DiaryItem, index: number) => (
-              <DiaryCard data={item} key={item.id} />
+              <DiaryCard
+                data={item}
+                key={item.id}
+                className="fadeIn animated-2"
+              />
             ))
           : ''}
         {isLoading ? renderGroupSkeleton(4) : ''}

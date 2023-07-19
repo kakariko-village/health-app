@@ -11,7 +11,7 @@ export default async function Home() {
   const menuData = await getAllData()
   return (
     <div className="my-page">
-      <div className="flex pt-[78px]">
+      <div className="flex pt-[78px] slideInRight animated-2">
         <div className="image-container relative">
           <div className="absolute z-10 top-0 left-0 right-0 bottom-0 flex flex-wrap justify-center content-center">
             <div className="relative">

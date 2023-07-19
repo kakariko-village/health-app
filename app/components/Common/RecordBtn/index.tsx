@@ -5,13 +5,22 @@ export type Props = {
   title: string
   img: string
   btnText: string
+  className?: string | ''
   callback: () => void
 }
-export default function RecordBtn({ title, img, btnText, callback }: Props) {
+export default function RecordBtn({
+  title,
+  img,
+  btnText,
+  className,
+  callback,
+}: Props) {
   return (
-    <div className="record-btn-container relative border-[24px] border-primary-300">
+    <div
+      className={`record-btn-container relative border-[24px] border-primary-300 ${className}`}
+    >
       <img src={img} alt={title} />
-      <div className="absolute bg-black w-[100%] top-0 left-0 right-0 bottom-0 opacity-60" />
+      <div className="absolute bg-black w-[100%] top-0 left-0 right-0 bottom-0 opacity-70" />
       <div className="absolute record-btn-content text-center w-[200px]">
         <h3 className="text-[25px] font-normal text-primary-300 mb-[16px] leading-none">
           {title}

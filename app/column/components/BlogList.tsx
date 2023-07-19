@@ -49,7 +49,11 @@ export default function BlogList({ data, apiUrl }: Props) {
       <div className="grid grid-cols-4 gap-4 mb-[32px]">
         {columnData && columnData.length > 0
           ? columnData.map((item: ColumnItem, index: number) => (
-              <ColumnCard data={item} key={item.id} />
+              <ColumnCard
+                data={item}
+                key={item.id}
+                className="fadeIn animated-2"
+              />
             ))
           : ''}
         {isLoading ? renderGroupSkeleton(4) : ''}

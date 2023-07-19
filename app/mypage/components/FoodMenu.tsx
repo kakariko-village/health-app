@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, MouseEvent } from 'react'
 import { Button } from '@/components/MUI'
 import MenuCard from '@/components/Common/MenuCard'
 import MenuCardSkeleton from '@/components/Common/MenuCard/Skeleton'
@@ -92,58 +92,72 @@ export default function FoodMenu({ menu, apiUrl }: Props) {
     }
     return skeletons
   }
+
   useEffect(() => {
     setMenuData(menu)
   }, [menu])
   return (
     <div className="food-menu-container">
       <div className="food-menu-filter-container flex justify-center mb-[20px]">
-        <img
-          className={`cursor-pointer mr-[50px] ${
-            isFilterLoading ? 'pointer-events-none' : ''
-          }`}
-          src="./images/morning-btn.png"
-          alt="Morning"
-          width={136}
-          height={136}
-          onClick={() => filterMenu('morning')}
-        />
-        <img
-          className={`cursor-pointer mr-[50px] ${
-            isFilterLoading ? 'pointer-events-none' : ''
-          }`}
-          src="./images/lunch-btn.png"
-          alt="Lunch"
-          width={136}
-          height={136}
-          onClick={() => filterMenu('lunch')}
-        />
-        <img
-          className={`cursor-pointer mr-[50px] ${
-            isFilterLoading ? 'pointer-events-none' : ''
-          }`}
-          src="./images/dinner-btn.png"
-          alt="Dinner"
-          width={136}
-          height={136}
-          onClick={() => filterMenu('dinner')}
-        />
-        <img
-          className={`cursor-pointer ${
-            isFilterLoading ? 'pointer-events-none' : ''
-          }`}
-          src="./images/snack-btn.png"
-          alt="Snack"
-          width={136}
-          height={136}
-          onClick={() => filterMenu('snack')}
-        />
+        <div className="slideInUp animated-2">
+          <img
+            className={`cursor-pointer mr-[50px] ${
+              isFilterLoading ? 'pointer-events-none' : ''
+            }`}
+            src="./images/morning-btn.png"
+            alt="Morning"
+            width={136}
+            height={136}
+            onClick={() => filterMenu('morning')}
+          />
+        </div>
+        <div className="slideInDown animated-2">
+          <img
+            className={`cursor-pointer mr-[50px] ${
+              isFilterLoading ? 'pointer-events-none' : ''
+            }`}
+            src="./images/lunch-btn.png"
+            alt="Lunch"
+            width={136}
+            height={136}
+            onClick={() => filterMenu('lunch')}
+          />
+        </div>
+        <div className="slideInUp animated-2">
+          <img
+            className={`cursor-pointer mr-[50px] ${
+              isFilterLoading ? 'pointer-events-none' : ''
+            }`}
+            src="./images/dinner-btn.png"
+            alt="Dinner"
+            width={136}
+            height={136}
+            onClick={() => filterMenu('dinner')}
+          />
+        </div>
+        <div className="slideInDown animated-2">
+          <img
+            className={`cursor-pointer  ${
+              isFilterLoading ? 'pointer-events-none' : ''
+            }`}
+            src="./images/snack-btn.png"
+            alt="Snack"
+            width={136}
+            height={136}
+            onClick={() => filterMenu('snack')}
+          />
+        </div>
       </div>
       <div className="grid grid-cols-4 gap-2 mb-[32px]">
         {isFilterLoading ? renderGroupSkeleton(8) : ''}
         {!isFilterLoading && menuData && menuData.length > 0
           ? menuData.map((item: MenuItem) => (
-              <MenuCard key={item.name} name={item.name} img={item.img} />
+              <MenuCard
+                key={item.name}
+                name={item.name}
+                img={item.img}
+                className="fadeIn animated-2"
+              />
             ))
           : ''}
         {isLoading ? renderGroupSkeleton(4) : ''}
