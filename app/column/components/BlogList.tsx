@@ -17,6 +17,7 @@ export default function BlogList({ data, apiUrl }: Props) {
   const loadMorePage = async () => {
     const page = currentPage + 1
     setIsLoading(true)
+    //  Delay API response by 2 seconds to see the skeleton loading
     try {
       const res = (await delayFetch(
         `${apiUrl}/columns?_page=${page}&_limit=8`,
@@ -34,6 +35,7 @@ export default function BlogList({ data, apiUrl }: Props) {
       console.log(e)
     }
   }
+  //  Delay API response by 2 seconds to see the skeleton loading
   const renderGroupSkeleton = (count: number) => {
     let skeletons = []
     for (let i = 1; i <= count; i++) {

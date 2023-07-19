@@ -18,6 +18,7 @@ export default function MyDiary({ data, apiUrl }: Props) {
   const loadMorePage = async () => {
     const page = currentPage + 1
     setIsLoading(true)
+    //  Delay API response by 2 seconds to see the skeleton loading
     try {
       const res = (await delayFetch(
         `${apiUrl}/my-diary?_page=${page}&_limit=8`,
@@ -35,6 +36,7 @@ export default function MyDiary({ data, apiUrl }: Props) {
       console.log(e)
     }
   }
+  // Display Skeleton Loading
   const renderGroupSkeleton = (count: number) => {
     let skeletons = []
     for (let i = 1; i <= count; i++) {

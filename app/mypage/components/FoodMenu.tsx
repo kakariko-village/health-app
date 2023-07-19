@@ -20,8 +20,11 @@ export default function FoodMenu({ menu, apiUrl }: Props) {
   const [currentFilter, setCurrentFilter] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [isFilterLoading, setIsFilterLoading] = useState(false)
+
+  // Handle Filter Data
   const filterMenu = async (val: string) => {
     if (val === currentFilter) {
+      // If user already chose one filter then click to the same filter button again, remove that filter and load page 1 data without filter
       setCurrentFilter('')
       setCurrentPage(1)
       setIsFilterLoading(true)
@@ -39,7 +42,9 @@ export default function FoodMenu({ menu, apiUrl }: Props) {
       }
     } else {
       try {
+        // Apply filter
         setIsFilterLoading(true)
+        //  Delay API response by 2 seconds to see the skeleton loading
         const res = (await delayFetch(
           `${apiUrl}/menu-list?_page=1&_limit=8&type=${val}`,
           {
@@ -58,11 +63,13 @@ export default function FoodMenu({ menu, apiUrl }: Props) {
       }
     }
   }
+  // Handle load more content
   const loadMorePage = async () => {
     const page = currentPage + 1
     setIsLoading(true)
     setIsFilterLoading(false)
     try {
+      //  Delay API response by 2 seconds to see the skeleton loading
       const res =
         currentFilter && currentFilter !== ''
           ? ((await delayFetch(
@@ -84,7 +91,7 @@ export default function FoodMenu({ menu, apiUrl }: Props) {
       console.log(e)
     }
   }
-
+  // Display Skeleton Loading
   const renderGroupSkeleton = (count: number) => {
     let skeletons = []
     for (let i = 1; i <= count; i++) {
@@ -149,6 +156,7 @@ export default function FoodMenu({ menu, apiUrl }: Props) {
         </div>
       </div>
       <div className="grid grid-cols-4 gap-2 mb-[32px]">
+        {/* Skeleton for filter: display on top of the list */}
         {isFilterLoading ? renderGroupSkeleton(8) : ''}
         {!isFilterLoading && menuData && menuData.length > 0
           ? menuData.map((item: MenuItem) => (
@@ -160,6 +168,7 @@ export default function FoodMenu({ menu, apiUrl }: Props) {
               />
             ))
           : ''}
+        {/* Skeleton for load more content: display on bottom of the list */}
         {isLoading ? renderGroupSkeleton(4) : ''}
       </div>
       <div className="text-center mb-[50px]">
