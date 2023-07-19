@@ -1,0 +1,25 @@
+.my-page {
+    .radial-progress-bar {
+       height: 181px;
+    }
+    .radial-progress-bar-value {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        >span {
+            text-align: center;
+            animation: glow 1s ease-in-out infinite alternate;
+        }
+    }
+}
+
+
+@keyframes glow {
+    from {
+      text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #FFCC21;
+    }
+    
+    to {
+      text-shadow: 0 0 2px #fff, 0 0 3px #FFCC21, 0 0 4px #FFCC21;
+    }
+  }

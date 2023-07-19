@@ -1,0 +1,24 @@
+.menu-card {
+    &-container {
+        min-width: 234px;
+        min-height: 234px;
+        overflow: hidden;
+        >a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        &:hover {
+            .menu-card-img {
+                transform: scale(1.5);
+            }
+        }
+    }
+    &-img {
+        transition: transform .7s ease; 
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
