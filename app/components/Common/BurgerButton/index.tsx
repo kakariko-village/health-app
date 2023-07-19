@@ -35,11 +35,13 @@ export default function BurgerButton({ list }: Props) {
         {list.map(({ name, url }, key) => {
           return (
             <MenuItem
-              key={name}
+              key={key}
               className="flex items-center rounded-none px-[32px] py-[23px] text-lg"
               style={{ borderBottom: 'outset 1px' }}
             >
-              <a href={url}>{name}</a>
+              <a href={url} className="block w-[100%]">
+                {name}
+              </a>
             </MenuItem>
           )
         })}
