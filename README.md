@@ -1,34 +1,50 @@
+# Welcome to Health App!
+
+## Introduction
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Installation
 
-First, run the development server:
+First, download and extract my zip file to your local machine then use Terminal (Mac) or Command Prompt (Windows) and go to your unzipped folder above
 
+Run 
 ```bash
-npm run dev
+npm install
+
 # or
-yarn dev
+
+npm install --no-audit
+
 # or
-pnpm dev
+
+yarn
+```
+I prefer **yarn**, if you have not yet installed yarn please follow [this guide](https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable)
+
+Second, please install Json Server to simulate the database and APIs. To install the Json server please run this command:
+```bash
+npm install -g json-server
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Third, start the Json Server first by run this command in the project directory and keep this Terminal /Command Prompt running:
+```bash
+json-server --watch db.json
+```
+The **db.json** parameter above is a JSON file located in the same project directory. I have prepared a lot of data in this file so if you have time, please take a look at this file to know the API response structures.  JSON Server also supports paging and filtering by default. To read more about  JSON Server, please follow this link: https://github.com/typicode/json-server
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Last, open another Terminal /Command Prompt in the same project directory. Start the NextJS server with this command:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm  run  dev
 
-## Learn More
+# or
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+yarn  dev
+```
+Now you can access the project by using this URL on your browser: http://localhost:8000/
+Currently, there are 3 pages and none of them have supported responsive yet because of the strict deadline:
+- My Page: http://localhost:8000/
+ - My Record: http://localhost:8000/record
+ - Column: http://localhost:8000/column
+ **Thank you!**
+ 
