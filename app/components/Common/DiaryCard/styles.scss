@@ -1,0 +1,16 @@
+.diary-card {
+    &-container {
+        min-width: 231px;
+        min-height: 231px;
+        overflow: hidden;
+        background-color: #FFF;
+    }
+    &-content {
+        overflow: hidden;
+        white-space: normal;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+}
