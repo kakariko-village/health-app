@@ -33,7 +33,7 @@ export default function RecordChart() {
     },
   ]
   const renderExercises = (count: number) => {
-    let data = []
+    const data = []
     for (let i = 1; i <= count; i++) {
       data.push(
         <li className="border-b px-2 pb-2 mr-[50px]">
