@@ -50,7 +50,7 @@ export default function BlogList({ data, apiUrl }: Props) {
     <div className="column-container">
       <div className="grid grid-cols-4 gap-4 mb-[32px]">
         {columnData && columnData.length > 0
-          ? columnData.map((item: ColumnItem, index: number) => (
+          ? columnData.map((item: ColumnItem) => (
               <ColumnCard
                 data={item}
                 key={item.id}

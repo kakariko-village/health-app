@@ -54,7 +54,7 @@ export default function MyDiary({ data, apiUrl }: Props) {
       </h2>
       <div className="grid grid-cols-4 gap-4 mb-[32px]">
         {diaryData && diaryData.length > 0
-          ? diaryData.map((item: DiaryItem, index: number) => (
+          ? diaryData.map((item: DiaryItem) => (
               <DiaryCard
                 data={item}
                 key={item.id}
