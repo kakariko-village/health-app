@@ -1,4 +1,4 @@
-import { Navbar, MobileNav, Typography, Badge } from '@/components/MUI'
+import { Navbar, Typography, Badge } from '@/components/MUI'
 import Image from 'next/image'
 import Logo from '@/assets/icons/logo.svg'
 import Edit from '@/assets/icons/edit.svg'
