@@ -1,5 +1,4 @@
 'use client'
-import React, { useState } from 'react'
 import RecordBtn from '@/components/Common/RecordBtn'
 import LineChart from '@/components/Common/LineChart'
 import faker from 'faker'
