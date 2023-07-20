@@ -38,7 +38,7 @@ export default function MyDiary({ data, apiUrl }: Props) {
   }
   // Display Skeleton Loading
   const renderGroupSkeleton = (count: number) => {
-    let skeletons = []
+    const skeletons = []
     for (let i = 1; i <= count; i++) {
       skeletons.push(<DiaryCardSkeleton />)
     }

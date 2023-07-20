@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect, MouseEvent } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button } from '@/components/MUI'
 import MenuCard from '@/components/Common/MenuCard'
 import MenuCardSkeleton from '@/components/Common/MenuCard/Skeleton'
@@ -93,7 +93,7 @@ export default function FoodMenu({ menu, apiUrl }: Props) {
   }
   // Display Skeleton Loading
   const renderGroupSkeleton = (count: number) => {
-    let skeletons = []
+    const skeletons = []
     for (let i = 1; i <= count; i++) {
       skeletons.push(<MenuCardSkeleton />)
     }

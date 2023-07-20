@@ -37,7 +37,7 @@ export default function BlogList({ data, apiUrl }: Props) {
   }
   //  Delay API response by 2 seconds to see the skeleton loading
   const renderGroupSkeleton = (count: number) => {
-    let skeletons = []
+    const skeletons = []
     for (let i = 1; i <= count; i++) {
       skeletons.push(<ColumnCardSkeleton />)
     }
